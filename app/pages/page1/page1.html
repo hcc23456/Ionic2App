@@ -1,0 +1,31 @@
+<ion-navbar *navbar>
+  <ion-title>
+    Home
+  </ion-title>
+  <button round block (click)="reload()">Reload</button>
+</ion-navbar>
+
+<ion-content padding class="page1">
+
+  <ion-label>Name</ion-label>
+  <ion-input type="text" name="name" [(ngModel)]="data.name">Enter Name</ion-input>
+  <br><br>
+
+  <ion-label>Phone</ion-label>
+  <ion-input type="number" name="phone" [(ngModel)]="data.phone">Enter Phone Number</ion-input>
+  <br><br>
+
+  <ion-label>Pictures</ion-label>
+  <button round block (click)="selectPicture()">Choose photo</button>
+
+  <!--use this-->
+  <ion-list>
+  <ion-item *ngFor="#image of images">
+    <img [src]="image.src"/>
+  </ion-item>
+  </ion-list>
+  <br><br>
+
+
+  <button round block (click)="submit()">Submit to server</button>
+</ion-content>
